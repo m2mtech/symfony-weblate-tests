@@ -1,0 +1,8 @@
+.idea
+bin/symfony
+data
+weblate-translation-provider
+*/.ecs_cache
+*/composer.lock
+*/symfony.lock
+

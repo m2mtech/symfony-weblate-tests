@@ -1,0 +1,6 @@
+default:
+  first: first
+  second: second
+  will:
+    change: changed
+    be.added: will be added

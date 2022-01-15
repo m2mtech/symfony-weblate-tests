@@ -1,0 +1,10 @@
+validators:
+  test: Test
+  multiLine: |
+    Zeile eins.
+    Zeile zwei.
+    Zeile drei.
+    Zeile vier.
+  other: Weitere.
+  inLine: "Zeile eins.\nZeile zwei.\nZeile drei.\nZeile vier."
+  yet.another: Eine weitere.

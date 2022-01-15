@@ -1,0 +1,76 @@
+version: "3.9"
+services:
+  php8: &php
+    build:
+      context: .
+      dockerfile: docker/php8.0/Dockerfile
+    volumes:
+      - .:/app:delegated
+      - ~/.composer:/.composer:delegated
+    networks:
+      - weblate
+
+  php81:
+    <<: *php
+    build:
+      context: .
+      dockerfile: docker/php8.1/Dockerfile
+
+  php74:
+    <<: *php
+    build:
+      context: .
+      dockerfile: docker/php7.4/Dockerfile
+
+  php73:
+    <<: *php
+    build:
+      context: .
+      dockerfile: docker/php7.3/Dockerfile
+
+  php72:
+    <<: *php
+    build:
+      context: .
+      dockerfile: docker/php7.2/Dockerfile
+
+  weblate:
+    image: weblate/weblate
+    restart: always
+    env_file:
+      - weblate.env
+    environment:
+      WEBLATE_SITE_DOMAIN: ${WEBLATE_SITE_DOMAIN}
+      WEBLATE_ADMIN_PASSWORD: ${WEBLATE_ADMIN_PASSWORD}
+      WEBLATE_ADMIN_EMAIL: ${WEBLATE_ADMIN_EMAIL}
+    depends_on:
+      - weblate_redis
+      - weblate_database
+    volumes:
+      - ./data/weblate:/app/data
+    ports:
+      - 8080:8080
+    networks:
+      - weblate
+
+  weblate_database:
+    image: postgres:13-alpine
+    restart: always
+    env_file:
+      - weblate.env
+    volumes:
+      - ./data/weblate_postgres:/var/lib/postgresql/data
+    networks:
+      - weblate
+
+  weblate_redis:
+    image: redis:6-alpine
+    restart: always
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - ./data/weblate_redis:/data
+    networks:
+      - weblate
+
+networks:
+  weblate:

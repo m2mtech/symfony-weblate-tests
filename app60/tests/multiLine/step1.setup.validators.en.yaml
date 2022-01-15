@@ -1,0 +1,10 @@
+validators:
+  test: test
+  multiLine: |
+    First Line.
+    Second Line.
+    
+    Fourth Line.
+  other: other
+  inLine: "First Line.\nSecond Line.\n\nFourth Line."
+  yet.another: Yet Another.

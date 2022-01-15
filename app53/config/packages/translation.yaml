@@ -1,0 +1,20 @@
+framework:
+    default_locale: en
+    translator:
+        default_path: '%kernel.project_dir%/translations'
+        fallbacks:
+            - en
+        providers:
+#            crowdin:
+#                dsn: '%env(CROWDIN_DSN)%'
+#            loco:
+#                dsn: '%env(LOCO_DSN)%'
+#            lokalise:
+#                dsn: '%env(LOKALISE_DSN)%'
+            weblate:
+                dsn: '%env(WEBLATE_DSN)%'
+                locales: [en, de]
+
+weblate_translation_provider:
+    https: false
+    verify_peer: false

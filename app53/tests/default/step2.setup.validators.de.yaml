@@ -1,0 +1,6 @@
+default:
+  first: erste
+  second: zweite
+  will:
+    change: ändert sich nicht, da nicht --force
+    be.added: hinzugefügt

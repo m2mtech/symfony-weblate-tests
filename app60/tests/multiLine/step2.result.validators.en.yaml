@@ -1,0 +1,6 @@
+validators.test: test
+validators.multiLine: "First Line.\nSecond Line.\nThird Line.\nFourth Line.\n"
+validators.other: other
+validators.inLine: "First Line.\nSecond Line.\nThird Line.\nFourth Line."
+validators.yet.another: 'Yet Another.'
+validators.new: "\n\nThird Line."

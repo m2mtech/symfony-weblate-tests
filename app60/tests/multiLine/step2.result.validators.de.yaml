@@ -1,0 +1,5 @@
+validators.test: Test
+validators.multiLine: "Zeile eins.\nZeile zwei.\nZeile drei.\nZeile vier.\n"
+validators.other: Weitere.
+validators.inLine: "Zeile eins.\nZeile zwei.\nZeile drei.\nZeile vier."
+validators.yet.another: 'Eine weitere.'

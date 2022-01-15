@@ -1,0 +1,6 @@
+default:
+  first: erste
+  second: zweite
+  will:
+    change: wird sich ändern
+    be.deleted: wird gelöscht
